@@ -1,7 +1,7 @@
 # System-Softaware-Programming
 ## This course is mainly developed on C. This course is about how we can programm in a effcient way, but also, how a computer works and by knowing that, learn other type of languages, like assembly. The following text is what we had to do through this course in every homework. 
 
-##Tarea1
+## Tarea1
 ### *CC3301 Programación de Software de Sistemas – Semestre Primavera 2023 – Tarea 1 – Profs. Mateu/Ibarra*
 
 El formato BCD o *Binary Coded Decimal*  se usa para representar números enteros positivos en base 10.  Cada cifra decimal del número se codifica en binario en 4 bits.  Por ejemplo el número 60219 se codifica como 0b0110 0000 0010 0001 1001, en donde el 0110 codifica el 6, el 0000 el 0, el 0010 el 2, el 0001 el 1 y el 1001 el 9.  La ventaja es que al anotar la secuencia de bits en hexadecimal se lee exactamente el mismo número representado en BCD, es decir 0x60219.  Observe que las secuencias 0b1010 … 0b1111 o 0xa … 0xf no pueden ocurrir y que 0x60219 representa en BCD el número 60219 mientras que el mismo 0x60219  representa  en  binario  el  número  393753  (9  + 1\*16+2\*162+6\*164).
