@@ -10,37 +10,30 @@
 
 #### typedef unsigned long long **Bcd**; Bcd ![](Aspose.Words.c265c1e0-dacd-40f2-8200-8d2fa8ffa043.001.png)**sumaBcd**(Bcd x, Bcd y);
 
-Ejemplo de uso:
+#### Ejemplo de uso:
 
-Bcd a= sumaBcd(0x60219, 0x1); *// a es 0x60220![](Aspose.Words.c265c1e0-dacd-40f2-8200-8d2fa8ffa043.002.png)*
+#### Bcd a= sumaBcd(0x60219, 0x1); *// a es 0x60220![](Aspose.Words.c265c1e0-dacd-40f2-8200-8d2fa8ffa043.002.png)*
 
-Bcd b= sumaBcd(0x199305, 0x9781); *// b es 0x209086*
+#### Bcd b= sumaBcd(0x199305, 0x9781); *// b es 0x209086*
 
-Bcd c= sumaBcd(0x9999999999999999, 0x1); *// c es 0xfff...ffff*
+### Bcd c= sumaBcd(0x9999999999999999, 0x1); *// c es 0xfff...ffff*
 
-Observe que no sirve sumar directamente los números en BCD con el operador + de C porque 0x60219 + 0x1 es 0x6021A, que es una secuencia de bits inválida en BCD.  Por lo tanto Ud. necesita separar las cifras decimales de a 4 bits y sumar exactamente como aprendió a hacerlo en enseñanza básica.
+#### Observe que no sirve sumar directamente los números en BCD con el operador + de C porque 0x60219 + 0x1 es 0x6021A, que es una secuencia de bits inválida en BCD.  Por lo tanto Ud. necesita separar las cifras decimales de a 4 bits y sumar exactamente como aprendió a hacerlo en enseñanza básica.
 
-*Restricciones*:
+#### *Restricciones*:
 
-- Ud. no puede usar los operadores de multiplicación, división o módulo (\* / %).  Use los operadores de bits eficientemente.
-- No se permite convertir los números a binario, sumarlos con + y convertir el resultado a BCD.
-- Se descontará medio punto por no usar el estilo de indentación de Kernighan como se explica en [esta sección](https://wiki.dcc.uchile.cl/cc3301/principios#agrupacion_de_instrucciones) de los apuntes.
-- El estándar de C no especifica el resultado para desplazamientos
+#### - Ud. no puede usar los operadores de multiplicación, división o módulo (\* / %).  Use los operadores de bits eficientemente.
+#### - No se permite convertir los números a binario, sumarlos con + y convertir el resultado a BCD.
+#### - Se descontará medio punto por no usar el estilo de indentación de Kernighan como se explica en [esta sección](https://wiki.dcc.uchile.cl/cc3301/principios#agrupacion_de_instrucciones) de los apuntes.
+#### - El estándar de C no especifica el resultado para desplazamientos mayores o iguales al tamaño del operando.  Sanitize rechaza el desplazamiento *x<<nbits* cuando *nbits* es mayor o superior a la cantidad de bits de *x*.
 
-mayores o iguales al tamaño del operando.  Sanitize rechaza el desplazamiento *x<<nbits* cuando *nbits* es mayor o superior a la cantidad de bits de *x*.
+#### ***Instrucciones***
+#### Baje *t1.zip* de U-cursos y descomprímalo.  El directorio *T1* contiene los archivos (a) *test-suma.c* que prueba si su tarea funciona y compara su eficiencia con la solución del profesor, (b) *prof.ref-x86\_64 y prof.ref- aarch64* con los binarios ejecutables de la solución del profesor, (c) *suma.h* que incluye el encabezado de la función pedida, y (d) *Makefile* que le servirá para compilar y ejecutar su tarea.  Ud. debe programar la función *sumaBcd*  en el archivo *suma.c*.
 
-***Instrucciones***
+#### Pruebe su tarea bajo Debian 11 de 64 bits nativo o virtualizado con VirtualBox, Vmware, QEmu o WSL 2.  **Ejecute el comando *make* sin parámetros**.  Le mostrará las opciones que tiene para compilar su tarea. Estos son los requerimientos para aprobar su tarea:
 
-Baje *t1.zip* de U-cursos y descomprímalo.  El directorio *T1* contiene los archivos (a) *test-suma.c* que prueba si su tarea funciona y compara su eficiencia con la solución del profesor, (b) *prof.ref-x86\_64 y prof.ref- aarch64* con los binarios ejecutables de la solución del profesor, (c) *suma.h* que incluye el encabezado de la función pedida, y (d) *Makefile* que le servirá para compilar y ejecutar su tarea.  Ud. debe programar la función *sumaBcd*  en el archivo *suma.c*.
+#### - *make run* debe felicitarlo por aprobar este modo de ejecución. Su solución no debe ser 80% más lenta que la solución del profesor.
+#### - *make run-g* debe felicitarlo.
+#### - *make run-san*  debe felicitarlo y no reportar ningún problema como por ejemplo desplazamientos indefinidos.
 
-Pruebe su tarea bajo Debian 11 de 64 bits nativo o virtualizado con VirtualBox, Vmware, QEmu o WSL 2.  **Ejecute el comando *make* sin parámetros**.  Le mostrará las opciones que tiene para compilar su tarea. Estos son los requerimientos para aprobar su tarea:
-
-- *make run* debe felicitarlo por aprobar este modo de ejecución. Su solución no debe ser 80% más lenta que la solución del profesor.
-- *make run-g* debe felicitarlo.
-- *make run-san*  debe felicitarlo y no reportar ningún problema como por ejemplo desplazamientos indefinidos.
-
-Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
-
-***Entrega***
-
-Ud. solo debe entregar por medio de U-cursos el archivo *suma.zip* generado  por  el  comando *make  zip*.  **A  continuación  es  muy importante que descargue de U-cursos el mismo archivo que subió, luego descargue nuevamente los archivos adjuntos y vuelva a probar la tarea tal cual como la entregó**.  Esto es para evitar que Ud. reciba un 1.0 en su tarea porque entregó los archivos equivocados. Créame, sucede a menudo por ahorrarse esta verificación.  Se descontará medio punto por día de atraso.  No se consideran los días de receso, sábados, domingos o festivos.
+#### Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
