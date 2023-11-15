@@ -126,9 +126,7 @@ En donde el primer parámetro es el nombre del archivo que contiene el diccionar
 - Abra el archivo del diccionario en modo "r+" para poder leerlo y escribirlo.  Es decir:  *fopen(..., "r+")*.
 - Calcule el tamaño y el número de líneas en el archivo usando [*fseek y ftell*](https://www.u-cursos.cl/ingenieria/2022/2/CC3301/1/novedades/r/20220927155854C53EDE38F0EE7B__archivos2.pdf).
 - **Debe ser eficiente.**  Use *hash\_string(llave)* módulo número de líneas del archivo para calcular el número de línea en donde debe ir la llave definida.  Luego use [fseek y fread](https://www.u-cursos.cl/ingenieria/2022/2/CC3301/1/novedades/r/20220927155854C53EDE38F0EE7B__archivos2.pdf) para leer esa línea.  Si esa línea está desocupada reescriba esa misma línea para agregar la definición en esa misma línea.  Si no, lea las líneas que vienen a continuación hasta encontrar una línea en blanco y reescríbala para agregar la defición en esa línea.  El archivo es circular: si llega al final, continúe desde el comienzo.
-- Está prohibido leer el archivo completo, salvo si el archivo está lleno. Debe diagnosticar las situaciones de error en la salida estándar de
-
-errores.  En caso de error termine el programa de inmediato.  Estos son los errores que debe diagnosticar:
+- Está prohibido leer el archivo completo, salvo si el archivo está lleno. Debe diagnosticar las situaciones de error en la salida estándar de errores.  En caso de error termine el programa de inmediato.  Estos son los errores que debe diagnosticar:
 
 - No se puede abrir el archivo.  Debe diagnosticar este error con *perror*.
 - La llave ya estaba definida en el diccionario.
@@ -142,5 +140,3 @@ Cada ejecución de *definir*  modifica el diccionario.  Para restaurarlo ejecute
 ***Instrucciones***
 
 Ejecute el comando *make* sin parámetros en el directorio *T4* para recibir instrucciones acerca del archivo en donde debe programar su solución (*T4/definir.c*), cómo compilar y probar su solución, los requisitos que debe cumplir para aprobar la tarea (*make run-san*, *make run-g* y *make run*) y cómo entregar su tarea por U-cursos (*make zip*).
-
-*
