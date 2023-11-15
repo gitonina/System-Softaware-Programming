@@ -37,3 +37,46 @@
 #### - *make run-san*  debe felicitarlo y no reportar ningún problema como por ejemplo desplazamientos indefinidos.
 
 #### Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
+
+
+
+## Tarea2
+### *CC3301 Programación de Software de Sistemas – Semestre Primavera 2023 – Tarea 2 – Profs. Mateu/Ibarra*
+
+#### ***Parte a.-*** Programe la función:
+
+#### void **eliminar**(char \*str, char \*pat);![ref1]
+
+#### Esta función elimina del string *str* todas las apariciones del patrón *pat*. Ejemplos:
+
+#### char s1[]= "**las** pa**las** van"; // *13 caracteres* eliminar(s1, "las"); // s1 es " pa van" (7 caracteres) char s2[]= "11**10**1**10**01";
+
+#### eliminar(s2, "10"); // s2 es "11101"
+
+#### *Restricciones*: Ud. no puede usar el operador de subindicación [ ], ni su equivalente *\*(p+i)*.  Use ++ *--* *p+i* o *p-i*.  Por razones de eficiencia, Ud. no puede usar *malloc*  o declarar un arreglo para pedir memoria adicional.  Use múltiples punteros para direccionar distintas partes del string.
+
+#### ***Parte b.-*** Programe la función:
+
+#### char \***eliminados**(char \*str, char \*pat);![ref1]
+
+#### Esta función entrega un nuevo string en donde se han eliminado del string *str* todas las apariciones del patrón *pat*.  Ejemplos:
+
+#### char \*s1= eliminados("**las** pa**las** van", "las");           // s1 es " pa van" (7 caracteres)
+
+#### char \*s2= eliminados("11**10**1**10**01", "10");
+
+#### `          `// s2 es "11101"
+
+#### *Restricciones:* Ud. no puede usar el operador de subindicación [ ], ni su equivalente *\*(p+i)*. Use ++ o *p+i*.  Para recorrer el string use aritmética de punteros.  Use *malloc* para pedir memoria para el string resultante. Debe pedir exactamente la cantidad de bytes que necesita el resultado, no más.  Para el primer ejemplo debe pedir 8 bytes, para el segundo 6 bytes.  Si pide más memoria que la que necesita, el test de uso de memoria podría agotar la memoria de su computador haciendo que se ponga muy lento antes de que el programa falle.
+
+#### ***Instrucciones***
+
+#### El directorio *T2* contiene los archivos (a) *test-elim.c* que prueba si su tarea funciona y compara su eficiencia con la solución del profesor, (b) *prof.ref-x86\_64 y prof.ref- aarch64* con los binarios ejecutables de la solución del profesor, (c) *elim.h*  que incluye los encabezados de las funcion pedidas, y (d) *Makefile* que le servirá para compilar y ejecutar su tarea.  **Ejecute en un**
+
+#### **terminal el comando *make***  para recibir instrucciones adicionales. Estos son los requerimientos para aprobar su tarea.
+
+- *make run* debe felicitarlo por aprobar este modo de ejecución. Su solución no debe ser 80% más lenta que la solución del profesor.
+- *make run-g* debe felicitarlo.
+- *make run-san*  debe felicitarlo y no reportar ningún problema como por ejemplo goteras de memoria.
+
+Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
