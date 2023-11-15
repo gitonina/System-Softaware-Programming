@@ -102,4 +102,48 @@ El directorio *T3* contiene los archivos (a) *test-prev.c* que prueba si su tare
 
 Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
 
+## Tarea 4
+El archivo de texto *dicc.txt*  que viene a continuación almacena un diccionario representado como una [tabla de hashing cerrado](https://es.wikipedia.org/wiki/Tabla_hash#Direccionamiento_abierto_o_hashing_cerrado).
+
+*celular:aparato portatil de un sistema de telefonia celular casa:edificacion construida para ser habitada![](foto6.png)*
+
+*posada:establecimiento economico de hospedaje para viajeros alimento:sustancia ingerida por un ser vivo*
+
+Todas las líneas son de 80 caracteres más el fin de línea (caracter '\n'). Se usa el caracter ':' para separar la llave de su valor asociado.  Una línea que contiene solo espacios en blanco no contiene ninguna definición.
+
+Escriba en el archivo *definir.c* un programa que agregue una llave al diccionario.  El siguiente es un ejemplo de uso:
+
+$ make definir.bin
+
+$ ./definir.bin dicc.txt bolsillo "bolsa pequena"
+
+En donde el primer parámetro es el nombre del archivo que contiene el diccionario, el segundo es la llave definida y el tercero es la definición. En el archivo *definir.c*, Ud. deberá programar la función:
+
+`            `*int main(int argc, char \*argv[ ]);*
+
+***Requerimientos***
+
+- Abra el archivo del diccionario en modo "r+" para poder leerlo y escribirlo.  Es decir:  *fopen(..., "r+")*.
+- Calcule el tamaño y el número de líneas en el archivo usando [*fseek y ftell*](https://www.u-cursos.cl/ingenieria/2022/2/CC3301/1/novedades/r/20220927155854C53EDE38F0EE7B__archivos2.pdf).
+- **Debe ser eficiente.**  Use *hash\_string(llave)* módulo número de líneas del archivo para calcular el número de línea en donde debe ir la llave definida.  Luego use [fseek y fread](https://www.u-cursos.cl/ingenieria/2022/2/CC3301/1/novedades/r/20220927155854C53EDE38F0EE7B__archivos2.pdf) para leer esa línea.  Si esa línea está desocupada reescriba esa misma línea para agregar la definición en esa misma línea.  Si no, lea las líneas que vienen a continuación hasta encontrar una línea en blanco y reescríbala para agregar la defición en esa línea.  El archivo es circular: si llega al final, continúe desde el comienzo.
+- Está prohibido leer el archivo completo, salvo si el archivo está lleno. Debe diagnosticar las situaciones de error en la salida estándar de
+
+errores.  En caso de error termine el programa de inmediato.  Estos son los errores que debe diagnosticar:
+
+- No se puede abrir el archivo.  Debe diagnosticar este error con *perror*.
+- La llave ya estaba definida en el diccionario.
+
+El test de prueba incluido verifica que Ud. diagnostique estos errores con exactamente el mismo mensaje que entrega la solución de referencia incluida en formato binario. Puede probar la solución de referencia con un diccionario y llave específica.  Por ejemplo:
+
+$ ./prof.ref-$(arch) dicc.txt bolsillo "bolsa pequena" Vea el diccionario resultante con el comando: less dicc.txt
+
+Cada ejecución de *definir*  modifica el diccionario.  Para restaurarlo ejecute el comando: bash mk-dicc.sh
+
+***Instrucciones***
+
+Descargue *t4.zip* de U-cursos y descomprímalo.  Ejecute el comando *make* sin parámetros en el directorio *T4* para recibir instrucciones acerca del archivo en donde debe programar su solución (*T4/definir.c*), cómo compilar y probar su solución, los requisitos que debe cumplir para aprobar la tarea (*make run-san*, *make run-g* y *make run*) y cómo entregar su tarea por U-cursos (*make zip*).
+
+***Entrega***
+
+Ud. solo debe entregar por medio de U-cursos el archivo *definir.zip* generado  por  el  comando *make  zip*.  **A  continuación  es  muy importante que descargue de U-cursos el mismo archivo que subió, luego descargue nuevamente los archivos adjuntos y vuelva a probar la tarea tal cual como la entregó**.  Esto es para evitar que Ud. reciba un 1.0 en su tarea porque entregó los archivos equivocados. Créame, sucede a menudo por ahorrarse esta verificación.  Se descontará medio punto por día de atraso.  No se consideran los días de receso, sábados, domingos o festivos.
 
