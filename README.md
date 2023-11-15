@@ -45,7 +45,7 @@
 
 #### ***Parte a.-*** Programe la función:
 
-#### void **eliminar**(char \*str, char \*pat);![ref1]
+#### void **eliminar**(char \*str, char \*pat);
 
 #### Esta función elimina del string *str* todas las apariciones del patrón *pat*. Ejemplos:
 
