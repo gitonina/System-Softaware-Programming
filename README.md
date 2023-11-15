@@ -141,9 +141,6 @@ Cada ejecución de *definir*  modifica el diccionario.  Para restaurarlo ejecute
 
 ***Instrucciones***
 
-Descargue *t4.zip* de U-cursos y descomprímalo.  Ejecute el comando *make* sin parámetros en el directorio *T4* para recibir instrucciones acerca del archivo en donde debe programar su solución (*T4/definir.c*), cómo compilar y probar su solución, los requisitos que debe cumplir para aprobar la tarea (*make run-san*, *make run-g* y *make run*) y cómo entregar su tarea por U-cursos (*make zip*).
+Ejecute el comando *make* sin parámetros en el directorio *T4* para recibir instrucciones acerca del archivo en donde debe programar su solución (*T4/definir.c*), cómo compilar y probar su solución, los requisitos que debe cumplir para aprobar la tarea (*make run-san*, *make run-g* y *make run*) y cómo entregar su tarea por U-cursos (*make zip*).
 
-***Entrega***
-
-Ud. solo debe entregar por medio de U-cursos el archivo *definir.zip* generado  por  el  comando *make  zip*.  **A  continuación  es  muy importante que descargue de U-cursos el mismo archivo que subió, luego descargue nuevamente los archivos adjuntos y vuelva a probar la tarea tal cual como la entregó**.  Esto es para evitar que Ud. reciba un 1.0 en su tarea porque entregó los archivos equivocados. Créame, sucede a menudo por ahorrarse esta verificación.  Se descontará medio punto por día de atraso.  No se consideran los días de receso, sábados, domingos o festivos.
-
+*
