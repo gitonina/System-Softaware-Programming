@@ -30,11 +30,7 @@
 #### ***Instrucciones***
 ####  El directorio *T1* contiene los archivos (a) *test-suma.c* que prueba si su tarea funciona y compara su eficiencia con la solución del profesor, (b) *prof.ref-x86\_64 y prof.ref- aarch64* con los binarios ejecutables de la solución del profesor, (c) *suma.h* que incluye el encabezado de la función pedida, y (d) *Makefile* que le servirá para compilar y ejecutar su tarea.  Ud. debe programar la función *sumaBcd*  en el archivo *suma.c*.
 
-#### Pruebe su tarea bajo Debian 11 de 64 bits nativo o virtualizado con VirtualBox, Vmware, QEmu o WSL 2.  **Ejecute el comando *make* sin parámetros**.  Le mostrará las opciones que tiene para compilar su tarea. Estos son los requerimientos para aprobar su tarea:
-
-#### - *make run* debe felicitarlo por aprobar este modo de ejecución. Su solución no debe ser 80% más lenta que la solución del profesor.
-#### - *make run-g* debe felicitarlo.
-#### - *make run-san*  debe felicitarlo y no reportar ningún problema como por ejemplo desplazamientos indefinidos.
+#### Pruebe su tarea bajo Debian 11 de 64 bits nativo o virtualizado con VirtualBox, Vmware, QEmu o WSL 2.  **Ejecute el comando *make* sin parámetros**.  Le mostrará las opciones que tiene para compilar su tarea. 
 
 #### Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
 
@@ -71,10 +67,6 @@
 
 #### ***Instrucciones***
 
-#### El directorio *T2* contiene los archivos (a) *test-elim.c* que prueba si su tarea funciona y compara su eficiencia con la solución del profesor, (b) *prof.ref-x86\_64 y prof.ref- aarch64* con los binarios ejecutables de la solución del profesor, (c) *elim.h*  que incluye los encabezados de las funcion pedidas, y (d) *Makefile* que le servirá para compilar y ejecutar su tarea.  **Ejecute en un** **terminal el comando *make***  para recibir instrucciones adicionales. Estos son los requerimientos para aprobar su tarea.
-
-- *make run* debe felicitarlo por aprobar este modo de ejecución. Su solución no debe ser 80% más lenta que la solución del profesor.
-- *make run-g* debe felicitarlo.
-- *make run-san*  debe felicitarlo y no reportar ningún problema como por ejemplo goteras de memoria.
+#### El directorio *T2* contiene los archivos (a) *test-elim.c* que prueba si su tarea funciona y compara su eficiencia con la solución del profesor, (b) *prof.ref-x86\_64 y prof.ref- aarch64* con los binarios ejecutables de la solución del profesor, (c) *elim.h*  que incluye los encabezados de las funcion pedidas, y (d) *Makefile* que le servirá para compilar y ejecutar su tarea.  **Ejecute en un** **terminal el comando *make***  para recibir instrucciones adicionales. 
 
 Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
