@@ -69,7 +69,7 @@
 Cuando pruebe su tarea con *make run* asegúrese que su computador esté configurado en modo alto rendimiento y que no estén corriendo otros procesos intensivos en uso de CPU al mismo tiempo.  De otro modo podría no lograr la eficiencia solicitada.
 
 ## Tarea3
-En un *recorrido en orden* de un árbol binario, se visita recursivamente primero el subárbol izquierdo, luego se visita la raíz y finalmente se visita recursivamente el subárbol derecho.  Considere que se está visitando un nodo T al recorrer un árbol binario en orden.  Se define como *previo* a T el nodo que se visitó anteriormente, y como *próximo* el nodo que se visitará a continuación.  Estudie el lado derecho de la figura de ejemplo.  Programe en el archivo *prev.c* la función *asignarPrev* que asigna los campos *prev* y *prox* agregados a la estructura de los nodos de un árbol *t*.  El encabezado de la ![](Aspose.Words.62f46922-a8ce-4d6c-8ce8-d82109fffd84.001.png)
+En un *recorrido en orden* de un árbol binario, se visita recursivamente primero el subárbol izquierdo, luego se visita la raíz y finalmente se visita recursivamente el subárbol derecho.  Considere que se está visitando un nodo T al recorrer un árbol binario en orden.  Se define como *previo* a T el nodo que se visitó anteriormente, y como *próximo* el nodo que se visitará a continuación.  Estudie el lado derecho de la figura de ejemplo.  Programe en el archivo *prev.c* la función *asignarPrev* que asigna los campos *prev* y *prox* agregados a la estructura de los nodos de un árbol *t*.  El encabezado de la ![](foto1.png)
 
 función se muestra a la derecha.  El typedef struct nodo { parámetro *\*pprev*  es de entrada y  int x;
 
@@ -81,9 +81,9 @@ el nodo próximo del último nodo en
 
 ser visitado (nodo 5) debe ser NULL.  En *\*pprev*  debe quedar finalmente la dirección del último nodo visitado (nodo 5).  En el siguiente ejemplo de uso las variables *t* y *prev* son de tipo Nodo \*.
 
-*prev t asignarPrev( t prev![](Aspose.Words.62f46922-a8ce-4d6c-8ce8-d82109fffd84.002.png)![](Aspose.Words.62f46922-a8ce-4d6c-8ce8-d82109fffd84.003.png)![](Aspose.Words.62f46922-a8ce-4d6c-8ce8-d82109fffd84.004.png)*
+*prev t asignarPrev( t prev![](foto2.png)![](foto3.png)![](foto4.png)*
 
-3   *t, &prev);* 3![](Aspose.Words.62f46922-a8ce-4d6c-8ce8-d82109fffd84.005.png)
+3   *t, &prev);* 3![](foto5.png)
 
 0 0
 
